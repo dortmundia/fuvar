@@ -4,13 +4,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.*;
 import java.io.*;
-
-import java.nio.file.*;
 import java.util.stream.*;
 
-public class Feladatok {
 
+public class Feladatok {
     private ArrayList<Fuvar> fuvarLista;
+
 
     public Feladatok(){
         Beolvas();
@@ -21,22 +20,22 @@ public class Feladatok {
                 .filter(i->i.getTaxi_id() ==6185)
                 .toArray(Fuvar szurt = new Fuvar);
 
-        System.out.println("4. Feladat: " + szurt.length + " alatt fuvarra: " + fuvarLista.stream(szurt).filter(k ->k.getViteldij()).sum());*/
+        System.out.println("4. Feladat: " + szurt.length + " alatt fuvarra: " + fuvarLista.stream(szurt).filter(k ->k.getViteldij()).sum());
+        */
 
 
 
         System.out.println("5. Feladat:");
-
         fuvarLista.stream()
                 .collect(Collectors.groupingBy(k -> k.getFizetes_modja(), Collectors.counting()))
                 .forEach((mod, db) -> System.out.println(mod + ": " + db + " db"));
 
 
         System.out.printf("6. Feladat: %.2f km\n", fuvarLista.stream().mapToDouble(k -> k.getTavolsag()).sum() * 1.6D);
-
         fuvarLista.stream()
                 .max(Comparator.comparingInt(k -> k.getIdotartam()))
                 .ifPresent(k -> System.out.printf("7. Feladat: %d mp, azonosito: %d, távolság: %.2f km, díj: %.2f$\n", k.getIdotartam(), k.getTaxi_id(), k.getTavolsag(), k.getViteldij()));
+
 
         String header = "taxi_id;indulas;idotartam;tavolsag;viteldij;borravalo;fizetes_modja\n";
         var hibasAdatok = fuvarLista.stream()
@@ -57,6 +56,7 @@ public class Feladatok {
 
     }
 
+
     private void Beolvas() {
         fuvarLista = new ArrayList<>();
 
@@ -72,9 +72,8 @@ public class Feladatok {
         }catch(IOException e){
             e.getMessage();
         }
-
-
     }
+
 
 }
 
