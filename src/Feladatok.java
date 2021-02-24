@@ -9,6 +9,7 @@ import java.util.stream.*;
 
 public class Feladatok {
     private ArrayList<Fuvar> fuvarLista;
+    private ArrayList<Fuvar> szurtLista;
 
 
     public Feladatok(){
@@ -16,9 +17,19 @@ public class Feladatok {
         System.out.println("3. Feladat: Fuvarok száma: " + fuvarLista.size());
 
 
-       /* var szurt = fuvarLista.stream()
+
+       /*
+       nem tudom mit nézek el de akár mit probáltam ezt nem sikerült megcsinálni elnézést
+
+        double szurtPenz;
+
+       var szurt = fuvarLista.stream()
                 .filter(i->i.getTaxi_id() ==6185)
-                .toArray(Fuvar szurt = new Fuvar);
+                .;
+
+        fuvarLista.stream()
+                .filter(k -> k.getTaxi_id() == 6185)
+                .toArray(szurtLista);
 
         System.out.println("4. Feladat: " + szurt.length + " alatt fuvarra: " + fuvarLista.stream(szurt).filter(k ->k.getViteldij()).sum());
         */
