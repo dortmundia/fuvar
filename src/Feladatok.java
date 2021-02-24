@@ -15,7 +15,7 @@ public class Feladatok {
     public Feladatok(){
         Beolvas();
         System.out.println("3. Feladat: Fuvarok száma: " + fuvarLista.size());
-
+        //egyik barátom aki már szoftverfejlesztő mondta hogy a var-t érdemes lenne kiprobálni javában azért most probálkoztam a használatával
 
 
        /*
